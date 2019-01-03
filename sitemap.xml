@@ -2,9 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sclearchan.github.io/2019/01/01/hello-world/</loc>
+    <loc>https://sclearchan.github.io/tags/index.html</loc>
     
-    <lastmod>2019-01-01T05:47:08.376Z</lastmod>
+    <lastmod>2019-01-03T03:56:36.393Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/2019/01/02/markdown/</loc>
+    
+    <lastmod>2019-01-03T03:53:39.101Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-01-03T03:52:22.175Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/markdown/index.html</loc>
+    
+    <lastmod>2019-01-03T02:19:30.836Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/about/index.html</loc>
+    
+    <lastmod>2019-01-03T02:12:15.961Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/2019/01/02/solidity-contract/</loc>
+    
+    <lastmod>2019-01-02T05:58:45.822Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/solidity/index.html</loc>
+    
+    <lastmod>2019-01-02T05:58:27.185Z</lastmod>
     
   </url>
   
