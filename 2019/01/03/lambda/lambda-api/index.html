@@ -94,21 +94,26 @@
 
 
 
-  <meta name="description" content="1. ADD Amazon API Gateway Amazon API Gateway에서 API를 한개 추가해준다. API 를 한개 추가하면 아래와 같은 화면이 보인다.  2. Add 사용량계획 API를 추가한 이후에 사용량계획(Usage Plans)를 추가해줘야 한다.">
+  <meta name="description" content="1. ADD Amazon API Gateway Amazon API Gateway에서 API를 한개 추가해준다. API 를 한개 추가하면 아래와 같은 화면이 보인다.  2. Add Stage API를 추가한 이후에 해당 API Resource에 접근할 수 있는 stage를 생성해준다. Stage를 추가해줘야 lambda에서 API Gateway생성시 배포단계">
 <meta name="keywords" content="LAMBDA,LAMBDA_APIKEY">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LAMBDA] Lambda 함수 API Key이용하여 호출하기">
 <meta property="og:url" content="https://sclearchan.github.io/2019/01/03/lambda/lambda-api/index.html">
 <meta property="og:site_name" content="sclearchan">
-<meta property="og:description" content="1. ADD Amazon API Gateway Amazon API Gateway에서 API를 한개 추가해준다. API 를 한개 추가하면 아래와 같은 화면이 보인다.  2. Add 사용량계획 API를 추가한 이후에 사용량계획(Usage Plans)를 추가해줘야 한다.">
+<meta property="og:description" content="1. ADD Amazon API Gateway Amazon API Gateway에서 API를 한개 추가해준다. API 를 한개 추가하면 아래와 같은 화면이 보인다.  2. Add Stage API를 추가한 이후에 해당 API Resource에 접근할 수 있는 stage를 생성해준다. Stage를 추가해줘야 lambda에서 API Gateway생성시 배포단계">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_01.png">
 <meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_02.png">
 <meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_03.png">
-<meta property="og:updated_time" content="2019-01-03T07:54:20.387Z">
+<meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_04.png">
+<meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_05.png">
+<meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_06.png">
+<meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_07.png">
+<meta property="og:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_08.png">
+<meta property="og:updated_time" content="2019-01-03T08:51:38.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[LAMBDA] Lambda 함수 API Key이용하여 호출하기">
-<meta name="twitter:description" content="1. ADD Amazon API Gateway Amazon API Gateway에서 API를 한개 추가해준다. API 를 한개 추가하면 아래와 같은 화면이 보인다.  2. Add 사용량계획 API를 추가한 이후에 사용량계획(Usage Plans)를 추가해줘야 한다.">
+<meta name="twitter:description" content="1. ADD Amazon API Gateway Amazon API Gateway에서 API를 한개 추가해준다. API 를 한개 추가하면 아래와 같은 화면이 보인다.  2. Add Stage API를 추가한 이후에 해당 API Resource에 접근할 수 있는 stage를 생성해준다. Stage를 추가해줘야 lambda에서 API Gateway생성시 배포단계">
 <meta name="twitter:image" content="https://sclearchan.github.io/images/content/lambda/lambda_apikey_01.png">
 
 
@@ -399,7 +404,7 @@
                 
               
 
-              <time title="Created: 2019-01-03 16:26:35 / Modified: 16:54:20" itemprop="dateCreated datePublished" datetime="2019-01-03T16:26:35+09:00">2019-01-03</time>
+              <time title="Created: 2019-01-03 16:26:35 / Modified: 17:51:38" itemprop="dateCreated datePublished" datetime="2019-01-03T16:26:35+09:00">2019-01-03</time>
             
 
             
@@ -476,8 +481,25 @@
 <li><strong>Amazon API Gateway에서 API를 한개 추가해준다.</strong><br><a href="/images/content/lambda/lambda_apikey_01.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_01.png"><br></a></li>
 <li><strong>API 를 한개 추가하면 아래와 같은 화면이 보인다.</strong><br><a href="/images/content/lambda/lambda_apikey_02.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_02.png"><br></a></li>
 </ul>
-<h1 id="2-Add-사용량계획"><a href="#2-Add-사용량계획" class="headerlink" title="2. Add 사용량계획"></a>2. Add 사용량계획</h1><ul>
-<li><strong>API를 추가한 이후에 사용량계획(Usage Plans)를 추가해줘야 한다.</strong><br><a href="/images/content/lambda/lambda_apikey_03.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_03.png"><br></a></li>
+<h1 id="2-Add-Stage"><a href="#2-Add-Stage" class="headerlink" title="2. Add Stage"></a>2. Add Stage</h1><ul>
+<li><strong>API를 추가한 이후에 해당 API Resource에 접근할 수 있는 stage를 생성해준다.</strong></li>
+<li><strong>Stage를 추가해줘야 lambda에서 API Gateway생성시 배포단계에서 선택을 할 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_03.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_03.png"><br></a></li>
+</ul>
+<h1 id="3-Add-Lambda-API-Gateway"><a href="#3-Add-Lambda-API-Gateway" class="headerlink" title="3. Add Lambda API Gateway"></a>3. Add Lambda API Gateway</h1><ul>
+<li><strong>Stage까지 추가 한 이후에 Lambda함수로 가서 API Gateway 트리거를 추가해주고 설정들은 아래와 같이 이전에 생성했던 API Gateway로 설정해준다.</strong><ul>
+<li>API : 1번에서 생성한 API를 선택.</li>
+<li>배포단계 : 2번에서 생성한 Stage를 선택.</li>
+<li>보안 : API 키로 열기로 선택.<br><a href="/images/content/lambda/lambda_apikey_04.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_04.png"><br></a></li>
+</ul>
+</li>
+<li><strong>추가를 누르고 저장을 하면 아래와 같이 API Gateway가 추가된걸 볼 수 있다.</strong></li>
+<li><strong>그리고 세부정보를 누르면 endpoint와 apikey가 자동으로 생성된걸 볼 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_05.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_05.png"><br></a></li>
+</ul>
+<h1 id="4-Postman으로-람다함수-호출하기"><a href="#4-Postman으로-람다함수-호출하기" class="headerlink" title="4. Postman으로 람다함수 호출하기."></a>4. Postman으로 람다함수 호출하기.</h1><ul>
+<li><strong>위에서 설정을 마치면 API Gateway resource가 자동으로 생성된걸 볼 수 있다.</strong></li>
+<li><strong>기본적으로 HTTP Request Method는 Any로 설정되어있고 언제든 추가/수정할 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_06.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_06.png"><br></a></li>
+<li><strong>Postman에서 Header에 x-api-key를 추가하지 않고 요청하면 아래와 같이 Forbidden되는 걸 볼 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_07.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_07.png"><br></a></li>
+<li><strong>Header에 x-api-key를 추가하고 요청하면 인증이 되어 정상 작동한다.</strong><br><a href="/images/content/lambda/lambda_apikey_08.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_08.png"><br></a></li>
 </ul>
 
       
@@ -712,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-ADD-Amazon-API-Gateway"><span class="nav-number">1.</span> <span class="nav-text">1. ADD Amazon API Gateway</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Add-사용량계획"><span class="nav-number">2.</span> <span class="nav-text">2. Add 사용량계획</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-ADD-Amazon-API-Gateway"><span class="nav-number">1.</span> <span class="nav-text">1. ADD Amazon API Gateway</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Add-Stage"><span class="nav-number">2.</span> <span class="nav-text">2. Add Stage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Add-Lambda-API-Gateway"><span class="nav-number">3.</span> <span class="nav-text">3. Add Lambda API Gateway</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Postman으로-람다함수-호출하기"><span class="nav-number">4.</span> <span class="nav-text">4. Postman으로 람다함수 호출하기.</span></a></li></ol></div>
             
 
           </div>
