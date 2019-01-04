@@ -447,9 +447,9 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
     </div>
 
   
@@ -733,50 +733,34 @@
 
   
 
-
-
   
-
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-  
-    
-    <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-    <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-  
-<!-- END LOCAL -->
-
+    <script id="dsq-count-scr" src="https://sclearchan-github-io.disqus.com/count.js" async></script>
   
 
   
     <script>
-    function renderGitment(){
-      var gitment = new Gitmint({
-        id: window.location.pathname,
-        owner: 'sclearchan',
-        repo: 'sclearchan.github.io',
-        
-        lang: "ko" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-        
-        oauth: {
-        
-        
-          client_secret: '26aa8a54a178091b4b2b33a202de031475cbcd4a',
-        
-          client_id: '7a3dc0b2ee90026bf984'
-        }});
-      gitment.render('gitment-container');
-    }
-
-    
-      renderGitment();
-    
+      var disqus_config = function () {
+        this.page.url = "https://sclearchan.github.io/categories/index.html";
+        this.page.identifier = "categories/index.html";
+        this.page.title = 'categories';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sclearchan-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
     </script>
   
+
+
+
+
+
+
 
 
 
