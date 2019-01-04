@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sclearchan.github.io/"/>
-  <updated>2019-01-04T07:03:17.335Z</updated>
+  <updated>2019-01-04T08:27:43.851Z</updated>
   <id>https://sclearchan.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LAMBDA] AWS CLI Commands List</title>
+    <link href="https://sclearchan.github.io/2019/01/04/aws/lambda/lambda-command/"/>
+    <id>https://sclearchan.github.io/2019/01/04/aws/lambda/lambda-command/</id>
+    <published>2019-01-04T08:02:33.000Z</published>
+    <updated>2019-01-04T08:27:43.851Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="LAMBDA-Function-Upload-with-zip"><a href="#LAMBDA-Function-Upload-with-zip" class="headerlink" title="LAMBDA Function Upload with zip"></a>LAMBDA Function Upload with zip</h1><ul><li><p>aws cli를 사용해서 lambda를 사용하려면 먼저 IAM에서 lambda 권한을 추가해줘야한다.<br><a href="/images/content/lambda/lambda-commands-01.png" target="popup"><br><img src="/images/content/lambda/lambda-commands-01.png"><br></a></p></li><li><p>aws cli usage</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ aws lambda update-function-code --<span class="keyword">function</span>-name <span class="string">"lambda function name"</span> --zip-file fileb://<span class="string">"to upload zip file"</span></span><br><span class="line">// example</span><br><span class="line">$ aws lambda update-function-code --<span class="keyword">function</span>-name lambdaFunction --zip-file fileb://lambdaFunction.zip</span><br></pre></td></tr></table></figure></li></ul><p>  <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/index.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/cli/latest/reference/lambda/index.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;LAMBDA-Function-Upload-with-zip&quot;&gt;&lt;a href=&quot;#LAMBDA-Function-Upload-with-zip&quot; class=&quot;headerlink&quot; title=&quot;LAMBDA Function Upload with zi
+      
+    
+    </summary>
+    
+      <category term="AWS" scheme="https://sclearchan.github.io/categories/AWS/"/>
+    
+      <category term="LAMBDA" scheme="https://sclearchan.github.io/categories/AWS/LAMBDA/"/>
+    
+    
+      <category term="AWS" scheme="https://sclearchan.github.io/tags/AWS/"/>
+    
+      <category term="LAMBDA" scheme="https://sclearchan.github.io/tags/LAMBDA/"/>
+    
+      <category term="COMMANDS" scheme="https://sclearchan.github.io/tags/COMMANDS/"/>
+    
+  </entry>
   
   <entry>
     <title>[AWS] S3에 aws cli를 사용하여 파일 업로드하기</title>

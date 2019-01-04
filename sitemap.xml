@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sclearchan.github.io/2019/01/04/aws/lambda/lambda-command/</loc>
+    
+    <lastmod>2019-01-04T08:27:43.851Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sclearchan.github.io/2019/01/04/aws/s3/s3-upload/</loc>
     
     <lastmod>2019-01-04T07:03:17.335Z</lastmod>
