@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sclearchan.github.io/2019/01/02/markdown/guide/</loc>
+    <loc>https://sclearchan.github.io/2019/01/04/aws/s3/s3-upload/</loc>
     
-    <lastmod>2019-01-04T03:11:42.653Z</lastmod>
+    <lastmod>2019-01-04T07:03:17.335Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://sclearchan.github.io/2019/01/03/lambda/lambda-api/</loc>
+    <loc>https://sclearchan.github.io/2019/01/03/aws/lambda/lambda-api/</loc>
     
-    <lastmod>2019-01-03T08:51:38.973Z</lastmod>
+    <lastmod>2019-01-04T06:12:18.861Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/2019/01/04/aws/lambda/lambda-web3-server/</loc>
+    
+    <lastmod>2019-01-04T06:12:10.385Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sclearchan.github.io/2019/01/02/markdown/style-guide/</loc>
+    
+    <lastmod>2019-01-04T03:13:11.843Z</lastmod>
     
   </url>
   

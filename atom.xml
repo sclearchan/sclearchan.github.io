@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>sclearchan</title>
   
-  <subtitle>blog</subtitle>
+  <subtitle>Seize your moment</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sclearchan.github.io/"/>
-  <updated>2019-01-03T08:51:38.973Z</updated>
+  <updated>2019-01-04T07:03:17.335Z</updated>
   <id>https://sclearchan.github.io/</id>
   
   <author>
@@ -17,11 +17,72 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[AWS] S3에 aws cli를 사용하여 파일 업로드하기</title>
+    <link href="https://sclearchan.github.io/2019/01/04/aws/s3/s3-upload/"/>
+    <id>https://sclearchan.github.io/2019/01/04/aws/s3/s3-upload/</id>
+    <published>2019-01-04T06:10:17.000Z</published>
+    <updated>2019-01-04T07:03:17.335Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-New-S3-Bucket을-생성"><a href="#1-New-S3-Bucket을-생성" class="headerlink" title="1. New S3 Bucket을 생성."></a>1. New S3 Bucket을 생성.</h1><ul><li><strong>새로운 S3 Bucket을 한개 생성합니다.</strong><br><a href="/images/content/s3/s3-upload-01.png" target="popup"><br><img src="/images/content/s3/s3-upload-01.png" style="width:60%;"><br></a></li></ul><h1 id="2-S3로-upload할-서버에-aws-cli가-없으면-설치를-진행"><a href="#2-S3로-upload할-서버에-aws-cli가-없으면-설치를-진행" class="headerlink" title="2. S3로 upload할 서버에 aws cli가 없으면 설치를 진행."></a>2. S3로 upload할 서버에 aws cli가 없으면 설치를 진행.</h1><ul><li><p><strong>Linux, Windows및 macOS에서 AWS CLI를 배포하는 기본 방법은 pip입니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install awscli --upgrade --user</span><br></pre></td></tr></table></figure><p><a href="https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-install.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-install.html</a></p></li></ul><h1 id="3-S3에-접근할-수-있는-IAM-account를-생성"><a href="#3-S3에-접근할-수-있는-IAM-account를-생성" class="headerlink" title="3. S3에 접근할 수 있는 IAM account를 생성."></a>3. S3에 접근할 수 있는 IAM account를 생성.</h1><blockquote><p><strong>S3에 접근할 수 있는 IAM 계정을 한개 생성해야 합니다.</strong></p></blockquote><ol><li><p>사용자 이름을 설정하고 액세스 유형을 프로그래밍 방식으로 선택합니다.<br><a href="/images/content/s3/s3-upload-02.png" target="popup"><br><img src="/images/content/s3/s3-upload-02.png" style="width:60%;"><br></a></p></li><li><p>권한설정에서는 기존 정책 직접 연결에서 AmazonS3FullAccess를 선택합니다.<br><a href="/images/content/s3/s3-upload-03.png" target="popup"><br><img src="/images/content/s3/s3-upload-03.png" style="width:60%;"><br></a></p></li><li><p>생성을 완료하게 되면 아래와 같이 Access Key와 비밀 Access Key가 생성됩니다. 나중에 server에서 이 Key들을 가지고 계정 Setting을 해야하기 때문에 다른곳에 저장해둡니다.<br><a href="/images/content/s3/s3-upload-04.png" target="popup"><br><img src="/images/content/s3/s3-upload-04.png"><br></a></p></li></ol><h1 id="4-Server에서-AWS-configure-설정"><a href="#4-Server에서-AWS-configure-설정" class="headerlink" title="4. Server에서 AWS configure 설정."></a>4. Server에서 AWS configure 설정.</h1><ul><li><p><strong>Upload를 진행 할 Server에 AWS CLI 설치가 완료되었으면 configure 해줘야 합니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ aws configure</span><br><span class="line">AWS Access Key ID [None]: IAM에서 생성된 Access Key 입력</span><br><span class="line">AWS Secret Access Key [None]: IAM에서 생성된 비밀 Access Key 입력</span><br><span class="line">Default region name [None]: region 선택. &lt;https://docs.aws.amazon.com/ko_kr/general/latest/gr/rande.html&gt;</span><br><span class="line">Default output format [None]: json</span><br></pre></td></tr></table></figure></li><li><p><strong>정상적으로 세팅이 되었는지 S3에 있는 버킷리스트를 출력해봅니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ aws s3 ls</span><br><span class="line">2019-01-04 06:23:40 aws-s3-upload-test</span><br></pre></td></tr></table></figure></li></ul><h1 id="5-S3로-File-Upload"><a href="#5-S3로-File-Upload" class="headerlink" title="5. S3로 File Upload"></a>5. S3로 File Upload</h1><ul><li><p><strong>서버에 있는 파일을 s3 cp 명령어로 upload합니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ aws s3 cp ./upload-test s3://aws-s3-upload-test</span><br><span class="line">upload: ./upload-test to s3://aws-s3-upload-test/upload-test</span><br></pre></td></tr></table></figure></li><li><p><strong>Upload가 완료 되면 AWS Console 페이지에서 확인합니다.</strong><br><a href="/images/content/s3/s3-upload-05.png" target="popup"><br><img src="/images/content/s3/s3-upload-05.png"><br></a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-New-S3-Bucket을-생성&quot;&gt;&lt;a href=&quot;#1-New-S3-Bucket을-생성&quot; class=&quot;headerlink&quot; title=&quot;1. New S3 Bucket을 생성.&quot;&gt;&lt;/a&gt;1. New S3 Bucket을 생성.&lt;/h1&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="AWS" scheme="https://sclearchan.github.io/categories/AWS/"/>
+    
+      <category term="S3" scheme="https://sclearchan.github.io/categories/AWS/S3/"/>
+    
+    
+      <category term="AWS" scheme="https://sclearchan.github.io/tags/AWS/"/>
+    
+      <category term="S3" scheme="https://sclearchan.github.io/tags/S3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LAMBDA] lambda에 web3 compile EC2 생성하기</title>
+    <link href="https://sclearchan.github.io/2019/01/04/aws/lambda/lambda-web3-server/"/>
+    <id>https://sclearchan.github.io/2019/01/04/aws/lambda/lambda-web3-server/</id>
+    <published>2019-01-04T03:19:54.000Z</published>
+    <updated>2019-01-04T06:12:10.385Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Mac에서 web3 설치하여 lambda function에 올리면 정상적으로 작동하지 않는다. web3 compile시에 Mac Os로 compile이 되기때문에 lambda os(Amazon Linux<br>) 에서 동작할 수 있는 코드로 compile해서 올려야 한다.</p></blockquote><hr><h1 id="1-Lambda에서-실행되는-AWS-AMI로-EC2-설치"><a href="#1-Lambda에서-실행되는-AWS-AMI로-EC2-설치" class="headerlink" title="1. Lambda에서 실행되는 AWS AMI로 EC2 설치"></a>1. Lambda에서 실행되는 AWS AMI로 EC2 설치</h1><ul><li>EC2 생성페이지에서 “amzn-ami-hvm-2017.03.1.20170812-x86_64-gp2” AMI로 생성한다.</li><li><a href="https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/current-supported-versions.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/current-supported-versions.html</a></li></ul><p><br></p><h1 id="2-생성된-EC2에서-web3-compile에-필요한-tools-install"><a href="#2-생성된-EC2에서-web3-compile에-필요한-tools-install" class="headerlink" title="2. 생성된 EC2에서 web3 compile에 필요한 tools install"></a>2. 생성된 EC2에서 web3 compile에 필요한 tools install</h1>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum update -y</span><br><span class="line">$ sudo yum install nodejs</span><br><span class="line">$ curl -sL [https://rpm.nodesource.com/setup_8.x](https://rpm.nodesource.com/setup_8.x) | sudo bash -</span><br><span class="line">$ sudo yum install nodejs</span><br><span class="line">$ sudo npm install -g node-gyp</span><br><span class="line">$ sudo yum groupinstall <span class="string">"Development Tools"</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Mac에서 web3 설치하여 lambda function에 올리면 정상적으로 작동하지 않는다. web3 compile시에 Mac Os로 compile이 되기때문에 lambda os(Amazon Linux&lt;br&gt;) 에서 동작
+      
+    
+    </summary>
+    
+      <category term="AWS" scheme="https://sclearchan.github.io/categories/AWS/"/>
+    
+      <category term="LAMBDA" scheme="https://sclearchan.github.io/categories/AWS/LAMBDA/"/>
+    
+    
+      <category term="AWS" scheme="https://sclearchan.github.io/tags/AWS/"/>
+    
+      <category term="LAMBDA" scheme="https://sclearchan.github.io/tags/LAMBDA/"/>
+    
+      <category term="WEB3" scheme="https://sclearchan.github.io/tags/WEB3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LAMBDA] Lambda 함수 API Key이용하여 호출하기</title>
-    <link href="https://sclearchan.github.io/2019/01/03/lambda/lambda-api/"/>
-    <id>https://sclearchan.github.io/2019/01/03/lambda/lambda-api/</id>
+    <link href="https://sclearchan.github.io/2019/01/03/aws/lambda/lambda-api/"/>
+    <id>https://sclearchan.github.io/2019/01/03/aws/lambda/lambda-api/</id>
     <published>2019-01-03T07:26:35.000Z</published>
-    <updated>2019-01-03T08:51:38.973Z</updated>
+    <updated>2019-01-04T06:12:18.861Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-ADD-Amazon-API-Gateway"><a href="#1-ADD-Amazon-API-Gateway" class="headerlink" title="1. ADD Amazon API Gateway"></a>1. ADD Amazon API Gateway</h1><ul><li><strong>Amazon API Gateway에서 API를 한개 추가해준다.</strong><br><a href="/images/content/lambda/lambda_apikey_01.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_01.png"><br></a></li><li><strong>API 를 한개 추가하면 아래와 같은 화면이 보인다.</strong><br><a href="/images/content/lambda/lambda_apikey_02.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_02.png"><br></a></li></ul><h1 id="2-Add-Stage"><a href="#2-Add-Stage" class="headerlink" title="2. Add Stage"></a>2. Add Stage</h1><ul><li><strong>API를 추가한 이후에 해당 API Resource에 접근할 수 있는 stage를 생성해준다.</strong></li><li><strong>Stage를 추가해줘야 lambda에서 API Gateway생성시 배포단계에서 선택을 할 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_03.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_03.png"><br></a></li></ul><h1 id="3-Add-Lambda-API-Gateway"><a href="#3-Add-Lambda-API-Gateway" class="headerlink" title="3. Add Lambda API Gateway"></a>3. Add Lambda API Gateway</h1><ul><li><strong>Stage까지 추가 한 이후에 Lambda함수로 가서 API Gateway 트리거를 추가해주고 설정들은 아래와 같이 이전에 생성했던 API Gateway로 설정해준다.</strong><ul><li>API : 1번에서 생성한 API를 선택.</li><li>배포단계 : 2번에서 생성한 Stage를 선택.</li><li>보안 : API 키로 열기로 선택.<br><a href="/images/content/lambda/lambda_apikey_04.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_04.png"><br></a></li></ul></li><li><strong>추가를 누르고 저장을 하면 아래와 같이 API Gateway가 추가된걸 볼 수 있다.</strong></li><li><strong>그리고 세부정보를 누르면 endpoint와 apikey가 자동으로 생성된걸 볼 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_05.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_05.png"><br></a></li></ul><h1 id="4-Postman으로-람다함수-호출하기"><a href="#4-Postman으로-람다함수-호출하기" class="headerlink" title="4. Postman으로 람다함수 호출하기."></a>4. Postman으로 람다함수 호출하기.</h1><ul><li><strong>위에서 설정을 마치면 API Gateway resource가 자동으로 생성된걸 볼 수 있다.</strong></li><li><strong>기본적으로 HTTP Request Method는 Any로 설정되어있고 언제든 추가/수정할 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_06.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_06.png"><br></a></li><li><strong>Postman에서 Header에 x-api-key를 추가하지 않고 요청하면 아래와 같이 Forbidden되는 걸 볼 수 있다.</strong><br><a href="/images/content/lambda/lambda_apikey_07.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_07.png"><br></a></li><li><strong>Header에 x-api-key를 추가하고 요청하면 인증이 되어 정상 작동한다.</strong><br><a href="/images/content/lambda/lambda_apikey_08.png" target="popup"><br><img src="/images/content/lambda/lambda_apikey_08.png"><br></a></li></ul>]]></content>
     
@@ -34,14 +95,16 @@
     
     </summary>
     
-      <category term="LAMBDA" scheme="https://sclearchan.github.io/categories/LAMBDA/"/>
+      <category term="AWS" scheme="https://sclearchan.github.io/categories/AWS/"/>
     
-      <category term="setting" scheme="https://sclearchan.github.io/categories/LAMBDA/setting/"/>
+      <category term="LAMBDA" scheme="https://sclearchan.github.io/categories/AWS/LAMBDA/"/>
     
+    
+      <category term="AWS" scheme="https://sclearchan.github.io/tags/AWS/"/>
     
       <category term="LAMBDA" scheme="https://sclearchan.github.io/tags/LAMBDA/"/>
     
-      <category term="LAMBDA_APIKEY" scheme="https://sclearchan.github.io/tags/LAMBDA-APIKEY/"/>
+      <category term="APIKEY" scheme="https://sclearchan.github.io/tags/APIKEY/"/>
     
   </entry>
   
@@ -74,10 +137,10 @@
   
   <entry>
     <title>[MARKDOWN] GUIDE</title>
-    <link href="https://sclearchan.github.io/2019/01/02/markdown/guide/"/>
-    <id>https://sclearchan.github.io/2019/01/02/markdown/guide/</id>
+    <link href="https://sclearchan.github.io/2019/01/02/markdown/style-guide/"/>
+    <id>https://sclearchan.github.io/2019/01/02/markdown/style-guide/</id>
     <published>2019-01-02T05:47:23.000Z</published>
-    <updated>2019-01-04T03:11:42.653Z</updated>
+    <updated>2019-01-04T03:13:11.843Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Headings"><a href="#Headings" class="headerlink" title="Headings"></a>Headings</h1><table><thead><tr><th>Markdown</th><th style="text-align:center">HTML</th><th style="text-align:center">Rendered Output</th></tr></thead><tbody><tr><td><span style="color:rgb(241,86,87)"><b># H1</b></span></td><td style="text-align:center"><code>&lt;h1&gt;Heading Level 1&lt;/h1&gt;</code></td><td style="text-align:center"><h1>Heading Level 1</h1></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>## H2</b></span></td><td style="text-align:center"><code>&lt;h2&gt;Heading Level 2&lt;/h2&gt;</code></td><td style="text-align:center"><h2>Heading Level 2</h2></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>### H3</b></span></td><td style="text-align:center"><code>&lt;h3&gt;Heading Level 3&lt;/h3&gt;</code></td><td style="text-align:center"><h3>Heading Level 3</h3></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>#### H4</b></span></td><td style="text-align:center"><code>&lt;h4&gt;Heading Level 4&lt;/h4&gt;</code></td><td style="text-align:center"><h4>Heading Level 4</h4></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>##### H5</b></span></td><td style="text-align:center"><code>&lt;h5&gt;Heading Level 5&lt;/h5&gt;</code></td><td style="text-align:center"><h5>Heading Level 5</h5></td></tr></tbody></table><hr><h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><ul><li>list1</li><li>list2</li></ul><hr><h1 id="인용"><a href="#인용" class="headerlink" title="인용"></a>인용</h1><blockquote><p>Example<br>Example</p></blockquote><p><br><br>Ref : <a href="https://www.markdownguide.org/basic-syntax" target="_blank" rel="noopener">https://www.markdownguide.org/basic-syntax</a></p>]]></content>
     
@@ -96,7 +159,7 @@
     
       <category term="MARKDOWN" scheme="https://sclearchan.github.io/categories/MARKDOWN/"/>
     
-      <category term="guide" scheme="https://sclearchan.github.io/categories/MARKDOWN/guide/"/>
+      <category term="style-guide" scheme="https://sclearchan.github.io/categories/MARKDOWN/style-guide/"/>
     
     
       <category term="MARKDOWN" scheme="https://sclearchan.github.io/tags/MARKDOWN/"/>
