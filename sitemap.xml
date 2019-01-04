@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sclearchan.github.io/2019/01/02/markdown/guide/</loc>
+    
+    <lastmod>2019-01-04T02:37:29.548Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sclearchan.github.io/2019/01/03/lambda/lambda-api/</loc>
     
     <lastmod>2019-01-03T08:51:38.973Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://sclearchan.github.io/2019/01/03/hexo/hexo/</loc>
     
     <lastmod>2019-01-03T07:29:48.153Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sclearchan.github.io/2019/01/02/markdown/guide/</loc>
-    
-    <lastmod>2019-01-03T07:29:45.629Z</lastmod>
     
   </url>
   

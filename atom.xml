@@ -77,7 +77,7 @@
     <link href="https://sclearchan.github.io/2019/01/02/markdown/guide/"/>
     <id>https://sclearchan.github.io/2019/01/02/markdown/guide/</id>
     <published>2019-01-02T05:47:23.000Z</published>
-    <updated>2019-01-03T07:29:45.629Z</updated>
+    <updated>2019-01-04T02:37:29.548Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Headings"><a href="#Headings" class="headerlink" title="Headings"></a>Headings</h1><table><thead><tr><th>Markdown</th><th style="text-align:center">HTML</th><th style="text-align:center">Rendered Output</th></tr></thead><tbody><tr><td><span style="color:rgb(241,86,87)"><b># H1</b></span></td><td style="text-align:center"><code>&lt;h1&gt;Heading Level 1&lt;/h1&gt;</code></td><td style="text-align:center"><h1>Heading Level 1</h1></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>## H2</b></span></td><td style="text-align:center"><code>&lt;h2&gt;Heading Level 2&lt;/h2&gt;</code></td><td style="text-align:center"><h2>Heading Level 2</h2></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>### H3</b></span></td><td style="text-align:center"><code>&lt;h3&gt;Heading Level 3&lt;/h3&gt;</code></td><td style="text-align:center"><h3>Heading Level 3</h3></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>#### H4</b></span></td><td style="text-align:center"><code>&lt;h4&gt;Heading Level 4&lt;/h4&gt;</code></td><td style="text-align:center"><h4>Heading Level 4</h4></td></tr><tr><td><span style="color:rgb(241,86,87)"><b>##### H5</b></span></td><td style="text-align:center"><code>&lt;h5&gt;Heading Level 5&lt;/h5&gt;</code></td><td style="text-align:center"><h5>Heading Level 5</h5></td></tr></tbody></table><hr><h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><ul><li>list1</li><li>list2</li></ul><hr><h1 id="인용"><a href="#인용" class="headerlink" title="인용"></a>인용</h1><blockquote><p>Example<br>Example</p></blockquote><p><br><br>Ref : <a href="https://www.markdownguide.org/basic-syntax" target="_blank" rel="noopener">https://www.markdownguide.org/basic-syntax</a></p>]]></content>
     
@@ -96,7 +96,7 @@
     
       <category term="MARKDOWN" scheme="https://sclearchan.github.io/categories/MARKDOWN/"/>
     
-      <category term="guide" scheme="https://sclearchan.github.io/categories/MARKDOWN/guide/"/>
+      <category term="setting" scheme="https://sclearchan.github.io/categories/MARKDOWN/setting/"/>
     
     
       <category term="MARKDOWN" scheme="https://sclearchan.github.io/tags/MARKDOWN/"/>
