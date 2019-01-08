@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sclearchan.github.io/"/>
-  <updated>2019-01-04T08:27:43.851Z</updated>
+  <updated>2019-01-08T01:13:20.040Z</updated>
   <id>https://sclearchan.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[VSCODE] VSCODE로 SFTP 원격 저장소 작업하기.</title>
+    <link href="https://sclearchan.github.io/2019/01/08/tools/vscode/vscode-sftp/"/>
+    <id>https://sclearchan.github.io/2019/01/08/tools/vscode/vscode-sftp/</id>
+    <published>2019-01-08T00:50:08.000Z</published>
+    <updated>2019-01-08T01:13:20.040Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-SFTP-확장기능-설치하기"><a href="#1-SFTP-확장기능-설치하기" class="headerlink" title="1. SFTP 확장기능 설치하기"></a>1. SFTP 확장기능 설치하기</h1><ul><li>VSCODE Market Place에서 sftp 검색한 후, sftp 확장플러그인을 설치한다.<br><a href="/images/content/tools/vscode/vscode_sftp-01.png" target="popup"><br><img src="/images/content/tools/vscode/vscode_sftp-01.png" style="width:60%;"><br></a></li></ul><h1 id="2-SFTP-설정하기"><a href="#2-SFTP-설정하기" class="headerlink" title="2. SFTP 설정하기"></a>2. SFTP 설정하기</h1><ul><li><p>설치끝나고 VSCODE Command Prompt에서 아래와 같이 SFTP config를 입력한다.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; SFTP: Config</span><br></pre></td></tr></table></figure></li><li><p>그러면 해당폴에서 .vscode/sftp.json파일이 생성되고 sftp로 접속할 서버내용을 입력해준다.</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"protocol"</span>: <span class="string">"sftp"</span>,</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">"localhost"</span>,</span><br><span class="line">    <span class="attr">"port"</span>: <span class="number">22</span>,</span><br><span class="line">    <span class="attr">"username"</span>: <span class="string">"username"</span>,</span><br><span class="line">    <span class="attr">"remotePath"</span>: <span class="string">"/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>Private Key로 접속을 원하면 “privateKeyPath”를 추가하여 key file path를 입력해준다.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"privateKeyPath": "keyfile path",</span><br></pre></td></tr></table></figure></li><li><p>Password로 접속을 원하면 “password”를 추가하고 password를 입력해준다.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"password": "your_password"</span><br></pre></td></tr></table></figure></li></ul><h1 id="3-SFTP-Sync"><a href="#3-SFTP-Sync" class="headerlink" title="3. SFTP Sync"></a>3. SFTP Sync</h1><ul><li>해당 폴더에서 우클릭을 하면 아래와 같이 sync할 수 있는 옵션이 추가된걸 볼 수 있다.<br><a href="/images/content/tools/vscode/vscode_sftp-02.png" target="popup"><br><img src="/images/content/tools/vscode/vscode_sftp-02.png" style="width:20%;"><br></a></li><li>Sync Local -&gt; Remote (로컬에서 원격으로 동기화한다)</li><li>Sync Remote -&gt; Local (원격에서 로컬로 동기화한다)</li><li>Sync Both Directions (양방향으로 동기화한다)</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-SFTP-확장기능-설치하기&quot;&gt;&lt;a href=&quot;#1-SFTP-확장기능-설치하기&quot; class=&quot;headerlink&quot; title=&quot;1. SFTP 확장기능 설치하기&quot;&gt;&lt;/a&gt;1. SFTP 확장기능 설치하기&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;VSCODE
+      
+    
+    </summary>
+    
+      <category term="TOOLS" scheme="https://sclearchan.github.io/categories/TOOLS/"/>
+    
+      <category term="VSCODE" scheme="https://sclearchan.github.io/categories/TOOLS/VSCODE/"/>
+    
+    
+      <category term="VSCODE" scheme="https://sclearchan.github.io/tags/VSCODE/"/>
+    
+  </entry>
   
   <entry>
     <title>[LAMBDA] AWS CLI Commands List</title>
@@ -48,11 +76,11 @@
   </entry>
   
   <entry>
-    <title>[AWS] S3에 aws cli를 사용하여 파일 업로드하기</title>
+    <title>[S3] S3에 aws cli를 사용하여 파일 업로드하기</title>
     <link href="https://sclearchan.github.io/2019/01/04/aws/s3/s3-upload/"/>
     <id>https://sclearchan.github.io/2019/01/04/aws/s3/s3-upload/</id>
     <published>2019-01-04T06:10:17.000Z</published>
-    <updated>2019-01-04T07:03:17.335Z</updated>
+    <updated>2019-01-04T09:11:39.659Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-New-S3-Bucket을-생성"><a href="#1-New-S3-Bucket을-생성" class="headerlink" title="1. New S3 Bucket을 생성."></a>1. New S3 Bucket을 생성.</h1><ul><li><strong>새로운 S3 Bucket을 한개 생성합니다.</strong><br><a href="/images/content/s3/s3-upload-01.png" target="popup"><br><img src="/images/content/s3/s3-upload-01.png" style="width:60%;"><br></a></li></ul><h1 id="2-S3로-upload할-서버에-aws-cli가-없으면-설치를-진행"><a href="#2-S3로-upload할-서버에-aws-cli가-없으면-설치를-진행" class="headerlink" title="2. S3로 upload할 서버에 aws cli가 없으면 설치를 진행."></a>2. S3로 upload할 서버에 aws cli가 없으면 설치를 진행.</h1><ul><li><p><strong>Linux, Windows및 macOS에서 AWS CLI를 배포하는 기본 방법은 pip입니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install awscli --upgrade --user</span><br></pre></td></tr></table></figure><p><a href="https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-install.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-install.html</a></p></li></ul><h1 id="3-S3에-접근할-수-있는-IAM-account를-생성"><a href="#3-S3에-접근할-수-있는-IAM-account를-생성" class="headerlink" title="3. S3에 접근할 수 있는 IAM account를 생성."></a>3. S3에 접근할 수 있는 IAM account를 생성.</h1><blockquote><p><strong>S3에 접근할 수 있는 IAM 계정을 한개 생성해야 합니다.</strong></p></blockquote><ol><li><p>사용자 이름을 설정하고 액세스 유형을 프로그래밍 방식으로 선택합니다.<br><a href="/images/content/s3/s3-upload-02.png" target="popup"><br><img src="/images/content/s3/s3-upload-02.png" style="width:60%;"><br></a></p></li><li><p>권한설정에서는 기존 정책 직접 연결에서 AmazonS3FullAccess를 선택합니다.<br><a href="/images/content/s3/s3-upload-03.png" target="popup"><br><img src="/images/content/s3/s3-upload-03.png" style="width:60%;"><br></a></p></li><li><p>생성을 완료하게 되면 아래와 같이 Access Key와 비밀 Access Key가 생성됩니다. 나중에 server에서 이 Key들을 가지고 계정 Setting을 해야하기 때문에 다른곳에 저장해둡니다.<br><a href="/images/content/s3/s3-upload-04.png" target="popup"><br><img src="/images/content/s3/s3-upload-04.png"><br></a></p></li></ol><h1 id="4-Server에서-AWS-configure-설정"><a href="#4-Server에서-AWS-configure-설정" class="headerlink" title="4. Server에서 AWS configure 설정."></a>4. Server에서 AWS configure 설정.</h1><ul><li><p><strong>Upload를 진행 할 Server에 AWS CLI 설치가 완료되었으면 configure 해줘야 합니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ aws configure</span><br><span class="line">AWS Access Key ID [None]: IAM에서 생성된 Access Key 입력</span><br><span class="line">AWS Secret Access Key [None]: IAM에서 생성된 비밀 Access Key 입력</span><br><span class="line">Default region name [None]: region 선택. &lt;https://docs.aws.amazon.com/ko_kr/general/latest/gr/rande.html&gt;</span><br><span class="line">Default output format [None]: json</span><br></pre></td></tr></table></figure></li><li><p><strong>정상적으로 세팅이 되었는지 S3에 있는 버킷리스트를 출력해봅니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ aws s3 ls</span><br><span class="line">2019-01-04 06:23:40 aws-s3-upload-test</span><br></pre></td></tr></table></figure></li></ul><h1 id="5-S3로-File-Upload"><a href="#5-S3로-File-Upload" class="headerlink" title="5. S3로 File Upload"></a>5. S3로 File Upload</h1><ul><li><p><strong>서버에 있는 파일을 s3 cp 명령어로 upload합니다.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ aws s3 cp ./upload-test s3://aws-s3-upload-test</span><br><span class="line">upload: ./upload-test to s3://aws-s3-upload-test/upload-test</span><br></pre></td></tr></table></figure></li><li><p><strong>Upload가 완료 되면 AWS Console 페이지에서 확인합니다.</strong><br><a href="/images/content/s3/s3-upload-05.png" target="popup"><br><img src="/images/content/s3/s3-upload-05.png"><br></a></p></li></ul>]]></content>
     

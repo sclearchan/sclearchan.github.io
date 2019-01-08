@@ -269,7 +269,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">8</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">9</span></a>
 
   </li>
         
@@ -288,7 +288,7 @@
       
     
 
-    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">7</span></a>
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">9</span></a>
 
   </li>
         
@@ -307,7 +307,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">6</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">7</span></a>
 
   </li>
 
@@ -343,6 +343,206 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sclearchan.github.io/2019/01/08/tools/vscode/vscode-sftp/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sclearchan">
+      <meta itemprop="description" content="Seize your moment">
+      <meta itemprop="image" content="/images/profile2.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sclearchan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/08/tools/vscode/vscode-sftp/" class="post-title-link" itemprop="url">[VSCODE] VSCODE로 SFTP 원격 저장소 작업하기.</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-08 09:50:08 / Modified: 10:13:20" itemprop="dateCreated datePublished" datetime="2019-01-08T09:50:08+09:00">2019-01-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/TOOLS/" itemprop="url" rel="index"><span itemprop="name">TOOLS</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/TOOLS/VSCODE/" itemprop="url" rel="index"><span itemprop="name">VSCODE</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/08/tools/vscode/vscode-sftp/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/08/tools/vscode/vscode-sftp/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-SFTP-확장기능-설치하기"><a href="#1-SFTP-확장기능-설치하기" class="headerlink" title="1. SFTP 확장기능 설치하기"></a>1. SFTP 확장기능 설치하기</h1><ul>
+<li>VSCODE Market Place에서 sftp 검색한 후, sftp 확장플러그인을 설치한다.<br><a href="/images/content/tools/vscode/vscode_sftp-01.png" target="popup"><br><img src="/images/content/tools/vscode/vscode_sftp-01.png" style="width:60%;"><br></a></li>
+</ul>
+<h1 id="2-SFTP-설정하기"><a href="#2-SFTP-설정하기" class="headerlink" title="2. SFTP 설정하기"></a>2. SFTP 설정하기</h1><ul>
+<li><p>설치끝나고 VSCODE Command Prompt에서 아래와 같이 SFTP config를 입력한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; SFTP: Config</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>그러면 해당폴에서 .vscode/sftp.json파일이 생성되고 sftp로 접속할 서버내용을 입력해준다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"protocol"</span>: <span class="string">"sftp"</span>,</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">"localhost"</span>,</span><br><span class="line">    <span class="attr">"port"</span>: <span class="number">22</span>,</span><br><span class="line">    <span class="attr">"username"</span>: <span class="string">"username"</span>,</span><br><span class="line">    <span class="attr">"remotePath"</span>: <span class="string">"/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Private Key로 접속을 원하면 “privateKeyPath”를 추가하여 key file path를 입력해준다.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"privateKeyPath": "keyfile path",</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Password로 접속을 원하면 “password”를 추가하고 password를 입력해준다.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"password": "your_password"</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="3-SFTP-Sync"><a href="#3-SFTP-Sync" class="headerlink" title="3. SFTP Sync"></a>3. SFTP Sync</h1><ul>
+<li>해당 폴더에서 우클릭을 하면 아래와 같이 sync할 수 있는 옵션이 추가된걸 볼 수 있다.<br><a href="/images/content/tools/vscode/vscode_sftp-02.png" target="popup"><br><img src="/images/content/tools/vscode/vscode_sftp-02.png" style="width:20%;"><br></a></li>
+<li>Sync Local -&gt; Remote (로컬에서 원격으로 동기화한다)</li>
+<li>Sync Remote -&gt; Local (원격에서 로컬로 동기화한다)</li>
+<li>Sync Both Directions (양방향으로 동기화한다)</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -564,7 +764,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/04/aws/s3/s3-upload/" class="post-title-link" itemprop="url">[AWS] S3에 aws cli를 사용하여 파일 업로드하기</a>
+                <a href="/2019/01/04/aws/s3/s3-upload/" class="post-title-link" itemprop="url">[S3] S3에 aws cli를 사용하여 파일 업로드하기</a>
               
             
           </h1>
@@ -589,7 +789,7 @@
                 
               
 
-              <time title="Created: 2019-01-04 15:10:17 / Modified: 16:03:17" itemprop="dateCreated datePublished" datetime="2019-01-04T15:10:17+09:00">2019-01-04</time>
+              <time title="Created: 2019-01-04 15:10:17 / Modified: 18:11:39" itemprop="dateCreated datePublished" datetime="2019-01-04T15:10:17+09:00">2019-01-04</time>
             
 
             
@@ -1606,7 +1806,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1633,7 +1833,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1662,7 +1866,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
